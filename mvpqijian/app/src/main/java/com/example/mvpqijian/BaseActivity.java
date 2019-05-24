@@ -18,18 +18,14 @@ public abstract class BaseActivity extends Activity implements BaseView {
      */
     public abstract void initPresenter();
 
-    private ProgressDialog mProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initPresenter();
-        if (getPresenter() != null){
+        if (getPresenter() != null) {
             getPresenter().attachView(this);
         }
-
-        mProgressDialog = new ProgressDialog(this);
-        mProgressDialog.setCancelable(false);
     }
 
     @Override
@@ -42,16 +38,12 @@ public abstract class BaseActivity extends Activity implements BaseView {
 
     @Override
     public void showLoading() {
-        if (!mProgressDialog.isShowing()) {
-            mProgressDialog.show();
-        }
+        ProgressDialogUtil.showProcessDialog(this, "加载中...");
     }
 
     @Override
     public void hideLoading() {
-        if (mProgressDialog.isShowing()) {
-            mProgressDialog.dismiss();
-        }
+        ProgressDialogUtil.dismiss();
     }
 
     @Override

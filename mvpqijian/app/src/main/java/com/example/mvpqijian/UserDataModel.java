@@ -2,6 +2,8 @@ package com.example.mvpqijian;
 
 import android.os.Handler;
 
+import java.util.Map;
+
 public class UserDataModel extends BaseModel<String> {
 
     @Override
@@ -28,5 +30,15 @@ public class UserDataModel extends BaseModel<String> {
                 callback.onComplete();
             }
         },2000);
+    }
+
+    @Override
+    protected void requestGetAPI(String url, Callback<String> callback) {
+        super.requestGetAPI(url, callback);
+    }
+
+    @Override
+    protected void requestPostAPI(String url, Map params, Callback<String> callback) {
+        super.requestPostAPI(url, params, callback);
     }
 }
