@@ -8,13 +8,36 @@ import android.widget.Toast;
 
 public abstract class BaseActivity extends Activity implements BaseView {
 
+    /**
+     * 获取Presenter实例，子类实现
+     */
+    public abstract BasePresenter getPresenter();
+
+    /**
+     * 初始化Presenter的实例，子类实现
+     */
+    public abstract void initPresenter();
+
     private ProgressDialog mProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initPresenter();
+        if (getPresenter() != null){
+            getPresenter().attachView(this);
+        }
+
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setCancelable(false);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (getPresenter() != null){
+            getPresenter().detachView();
+        }
     }
 
     @Override

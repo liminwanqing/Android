@@ -16,17 +16,21 @@ public class MainActivity extends BaseActivity implements MvpView {
         setContentView(R.layout.activity_main);
 
         text = (TextView)findViewById(R.id.text);
+    }
 
-        //初始化Presenter
+    @Override
+    public BasePresenter getPresenter() {
+        return presenter;
+    }
+
+    @Override
+    public void initPresenter() {
         presenter = new MvpPresenter();
-        presenter.attachView(this);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        //断开View引用
-        presenter.detachView();
     }
 
     @Override
