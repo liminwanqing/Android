@@ -147,12 +147,12 @@
             android:layout_centerInParent="true"
             android:visibility="@{viewModel.loading ? View.VISIBLE : View.GONE}" />
 
-        <TextView
+<!--        <TextView
             android:id="@+id/tv_query_failure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="@string/query_failure">
-        </TextView>
+        </TextView>-->
     </RelativeLayout>
 </layout>

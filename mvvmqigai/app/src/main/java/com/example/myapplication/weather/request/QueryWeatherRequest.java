@@ -6,6 +6,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface QueryWeatherRequest {
-    @GET("weather/101280701.shtml")
+    @GET("data/cityinfo/101210101.html")
     Call<WeatherData> queryWeather();
 }
