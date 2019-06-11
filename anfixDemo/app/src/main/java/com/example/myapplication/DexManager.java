@@ -7,6 +7,7 @@ import java.io.File;
 import java.lang.reflect.Method;
 import java.util.Enumeration;
 
+import dalvik.system.DexClassLoader;
 import dalvik.system.DexFile;
 
 public class DexManager {
