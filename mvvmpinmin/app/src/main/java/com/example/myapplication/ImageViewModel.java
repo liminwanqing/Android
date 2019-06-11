@@ -14,7 +14,7 @@ public class ImageViewModel extends ViewModel {
     private int idx;
 
     public ImageViewModel() {
-        mImage = new MutableLiveData<>();
+        mImage = new MutableLiveData<Data<ImageBean.ImagesBean>>();
         mRepertory = new ImageRepertory();
     }
 
@@ -94,6 +94,7 @@ public class ImageViewModel extends ViewModel {
                 .subscribe(new Observer<ImageBean>() {
                     @Override
                     public void onSubscribe(Disposable d) {
+                        //TODO
                     }
 
                     @Override

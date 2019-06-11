@@ -34,7 +34,8 @@ public class ImageActivity extends AppCompatActivity {
             @Override
             public void onChanged(@Nullable Data<ImageBean.ImagesBean> imagesBeanData) {
                 if (imagesBeanData.getErrorMsg() != null) {
-                    Toast.makeText(ImageActivity.this, imagesBeanData.getErrorMsg(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ImageActivity.this, imagesBeanData.getErrorMsg(),
+                            Toast.LENGTH_SHORT).show();
                     mProgressDialog.dismiss();
                     return;
                 }
