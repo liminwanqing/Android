@@ -30,10 +30,10 @@ public class MainActivity extends BasicActivity {
 
     private String name;
 
-//    @OnClick({R.id.tv, R.id.btn})
-//    public void show(View view) {
-//        Toast.makeText(this, "show(View view)", Toast.LENGTH_LONG).show();
-//    }
+    @OnClick({R.id.tv})
+    public void show(View view) {
+        Toast.makeText(this, "show(View view)", Toast.LENGTH_LONG).show();
+    }
 
     @OnClick(R.id.btn)
     public void show() {
