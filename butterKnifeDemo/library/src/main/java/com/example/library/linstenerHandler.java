@@ -19,7 +19,7 @@ public class linstenerHandler implements InvocationHandler {
             String methodName = method.getName();
             Method current = methodHashMap.get(methodName);
             if (null != current) {
-                if (method.getGenericParameterTypes().length == 0) {
+                if (current.getGenericParameterTypes().length == 0) {
                     return current.invoke(obj);
                 }
                 return current.invoke(obj, args);
